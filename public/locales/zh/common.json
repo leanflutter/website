@@ -3,8 +3,10 @@
     "en": "English",
     "zh": "中文"
   },
+  "name": "LeanFlutter",
   "slogan": "让 Flutter 更加简单。",
   "btn-get-in-touch": "保持联系",
   "nav-item-plugins": "插件",
-  "nav-item-tools": "工具"
+  "nav-item-tools": "工具",
+  "nav-item-blog": "博客"
 }

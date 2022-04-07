@@ -7,9 +7,9 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Result<PagedList<Article>>>
 ) {
-  const { page = 1, perPage = 10, locale, subpath }: any = req.query;
+  const { page = 1, perPage = 10, locale = "en" }: any = req.query;
 
-  const items = localDb.getArticles(locale, subpath);
+  const items = localDb.getArticles(locale, "");
   const pagedList: PagedList<Article> = paginate(items, page, perPage);
 
   res.statusCode = 200;

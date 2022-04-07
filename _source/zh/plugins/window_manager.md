@@ -351,7 +351,6 @@ class _HomePageState extends State<HomePage> with WindowListener {
 
 ## API
 
-<!-- README_DOC_GEN -->
 
 ### WindowManager
 
@@ -628,7 +627,6 @@ Emitted when the window leaves a full-screen state.
 
 Emitted all events.
 
-<!-- README_DOC_GEN -->
 
 ## 许可证
 

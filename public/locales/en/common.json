@@ -3,8 +3,10 @@
     "en": "English",
     "zh": "中文"
   },
+  "name": "LeanFlutter",
   "slogan": "To make the flutter even simpler.",
   "btn-get-in-touch": "GET IN TOUCH",
   "nav-item-plugins": "Plugins",
-  "nav-item-tools": "Tools"
+  "nav-item-tools": "Tools",
+  "nav-item-blog": "Blog"
 }

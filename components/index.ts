@@ -1,3 +1,5 @@
-export { default as ArticleBody } from "./ArticleBody";
-export { default as Brand } from "./Brand";
-export { default as Layout } from "./Layout";
+export * from "./HomePage";
+export * from "./Layout";
+export * from "./LocaleSwitcher";
+export * from "./Logo";
+export * from "./MdxPage";
