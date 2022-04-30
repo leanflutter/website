@@ -45,16 +45,14 @@ export function Header({ links }: HeaderProps) {
           placement="end"
           gutter={1}
           control={
-            <a
-              href={link.link}
-              className={classes.link}
-              onClick={(event) => event.preventDefault()}
-            >
-              <Center>
-                <span className={classes.linkLabel}>{link.label}</span>
-                <ChevronDown size={12} />
-              </Center>
-            </a>
+            <Link href={link.link}>
+              <a className={classes.link}>
+                <Center>
+                  <span className={classes.linkLabel}>{link.label}</span>
+                  <ChevronDown size={12} />
+                </Center>
+              </a>
+            </Link>
           }
         >
           {menuItems}
@@ -63,7 +61,7 @@ export function Header({ links }: HeaderProps) {
     }
 
     return (
-      <Link key={link.label} href={link.link}>
+      <Link key={link.label} href={link.link} passHref>
         <a className={classes.link}>{link.label}</a>
       </Link>
     );
