@@ -1,19 +1,18 @@
-import React, { useState } from "react";
 import {
-  Header as HeaderComp,
-  Menu,
-  Group,
-  Center,
-  Container,
-  useMantineColorScheme,
   ActionIcon,
   Anchor,
+  Center,
+  Container,
+  Group,
+  Header as HeaderComp,
+  Menu,
+  useMantineColorScheme,
 } from "@mantine/core";
 import { ChevronDown, MoonStars, Sun } from "tabler-icons-react";
-import Link from "next/link";
-
 import { LocaleSwitcher, Logo } from "../..";
+import React, { useState } from "react";
 
+import Link from "next/link";
 import useStyles from "./Header.styles";
 
 interface HeaderProps {
@@ -42,17 +41,19 @@ export function Header({ links }: HeaderProps) {
           trigger="hover"
           delay={0}
           transitionDuration={0}
-          placement="end"
+          placement="start"
           gutter={1}
           control={
-            <Link href={link.link}>
-              <a className={classes.link}>
-                <Center>
-                  <span className={classes.linkLabel}>{link.label}</span>
-                  <ChevronDown size={12} />
-                </Center>
-              </a>
-            </Link>
+            <a
+              href={link.link}
+              className={classes.link}
+              onClick={(event) => event.preventDefault()}
+            >
+              <Center>
+                <span className={classes.linkLabel}>{link.label}</span>
+                <ChevronDown size={12} />
+              </Center>
+            </a>
           }
         >
           {menuItems}
