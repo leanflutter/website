@@ -1,12 +1,20 @@
-import React from "react";
-import { Text, SimpleGrid, Container, Title, useMantineTheme, Anchor } from "@mantine/core";
+import { Anchor, Container, SimpleGrid, Text, Title, useMantineTheme } from "@mantine/core";
 
+import React from "react";
 import useStyles from "./SectionPlugins.styles";
 
 export const MOCKDATA = [
   {
     title: "auto_updater",
     description: "This plugin allows Flutter desktop apps to automatically update themselves (based on sparkle and winsparkle).",
+  },
+  {
+    title: "clipboard_watcher",
+    description: "This plugin allows Flutter desktop apps to watch clipboard changes.",
+  },
+  {
+    title: "contextual_menu",
+    description: "This plugin allows Flutter desktop apps to create native context menus.",
   },
   {
     title: "hotkey_manager",
@@ -45,8 +53,6 @@ export const MOCKDATA = [
     description: "This plugin allows Flutter desktop apps to resizing and repositioning the window.",
   },
 ];
-
-
 
 interface FeatureProps {
   title: React.ReactNode;
