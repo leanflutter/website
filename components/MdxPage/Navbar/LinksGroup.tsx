@@ -8,10 +8,7 @@ import {
   UnstyledButton,
   createStyles,
 } from "@mantine/core";
-import {
-  ChevronLeft,
-  ChevronRight,
-} from "tabler-icons-react";
+import { ChevronLeft, ChevronRight } from "tabler-icons-react";
 
 import useStyles from "./LinksGroup.styles";
 
@@ -34,11 +31,7 @@ export function LinksGroup({
   const ChevronIcon = theme.dir === "ltr" ? ChevronRight : ChevronLeft;
 
   const items = (hasLinks ? links : []).map((link) => (
-    <Link
-      href={link.link}
-      key={link.label}
-      passHref
-    >
+    <Link href={link.link} key={link.label} passHref>
       <Text<"a">
         component="a"
         className={classes.link}
@@ -51,24 +44,19 @@ export function LinksGroup({
   ));
 
   if (!hasLinks) {
-    return <>
-      <Link
-        href={link!}
-        passHref
-      >
-        <UnstyledButton
-          component="a"
-          className={classes.control}
-
-        >
-          <Group position="apart" spacing={0}>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Box ml="md">{label}</Box>
-            </Box>
-          </Group>
-        </UnstyledButton>
-      </Link>
-    </>
+    return (
+      <>
+        <Link href={link!} passHref>
+          <UnstyledButton component="a" className={classes.control}>
+            <Group position="apart" spacing={0}>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Box ml="md">{label}</Box>
+              </Box>
+            </Group>
+          </UnstyledButton>
+        </Link>
+      </>
+    );
   }
 
   return (

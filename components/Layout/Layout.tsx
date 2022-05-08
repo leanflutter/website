@@ -44,6 +44,11 @@ export function Layout({ title, description, children }: LayoutProps) {
                     },
                   ],
                 },
+                {
+                  link: "/sponsor",
+                  label: t("nav-item-sponsor"),
+                  links: [],
+                },
                 // { link: "/blog", label: t("nav-item-blog"), links: [] },
               ]}
             />

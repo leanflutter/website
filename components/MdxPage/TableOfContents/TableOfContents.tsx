@@ -1,8 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react';
-import Slugger from 'github-slugger';
-import { Text, useMantineTheme } from '@mantine/core';
-import useStyles from './TableOfContents.styles';
-import { useRouter } from 'next/router';
+import React, { useRef, useEffect, useState } from "react";
+import Slugger from "github-slugger";
+import { Text, useMantineTheme } from "@mantine/core";
+import useStyles from "./TableOfContents.styles";
+import { useRouter } from "next/router";
 
 interface Heading {
   depth: number;
@@ -50,7 +50,8 @@ export function TableOfContents({ headings, withTabs }: TableOfContentsProps) {
   useEffect(() => {
     slugger.reset();
     slugs.current = filteredHeadings.map(
-      (heading) => document.getElementById(slugger.slug(heading.value)) as HTMLDivElement
+      (heading) =>
+        document.getElementById(slugger.slug(heading.value)) as HTMLDivElement
     );
   }, [headings]);
 
@@ -71,7 +72,7 @@ export function TableOfContents({ headings, withTabs }: TableOfContentsProps) {
   const items = filteredHeadings.map((heading, index) => {
     const slug = slugger.slug(heading.value);
     return (
-      <Text<'a'>
+      <Text<"a">
         key={slug}
         component="a"
         size="sm"

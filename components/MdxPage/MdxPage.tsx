@@ -1,31 +1,31 @@
 import { Divider, Title } from "@mantine/core";
-import { useTranslation } from "next-i18next";
-import { Layout } from "..";
+
 import { Article } from "../../interfaces";
-
-import { Navbar } from "./Navbar";
-
-
-import useStyles from "./MdxPage.styles";
-
+import { Layout } from "..";
 import { MdxContent } from "./MdxContent";
+import { Navbar } from "./Navbar";
 import { TableOfContents } from "./TableOfContents";
+import useStyles from "./MdxPage.styles";
+import { useTranslation } from "next-i18next";
 
 interface MdxPageProps {
+  navbarLinks: any[];
   article: Article;
 }
 
 export function MdxPage(props: MdxPageProps) {
   const { classes } = useStyles();
   const { t } = useTranslation("common");
-  const { article } = props;
+  const { navbarLinks = [], article } = props;
   return (
     <Layout
       title={`${article.title} - ${t("name")}`}
       description={`${article.title} - ${t("name")}`}
     >
       <div className={classes.wrapper}>
-        <Navbar />
+        {navbarLinks.length > 0 && (
+          <Navbar links={navbarLinks} />
+        )}
         <div className={classes.container}>
           <Title>{article.title}</Title>
           <Divider my={24} variant="dotted" />
