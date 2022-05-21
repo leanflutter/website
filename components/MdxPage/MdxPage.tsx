@@ -1,4 +1,4 @@
-import { Divider, Title } from "@mantine/core";
+import { Divider, Title, Text } from "@mantine/core";
 
 import { Article } from "../../interfaces";
 import { Layout } from "..";
@@ -28,6 +28,9 @@ export function MdxPage(props: MdxPageProps) {
         )}
         <div className={classes.container}>
           <Title>{article.title}</Title>
+          <Text mt={12} color="gray" style={{ fontSize: 14 }}>
+            {article.date}
+          </Text>
           <Divider my={24} variant="dotted" />
           <MdxContent article={article} />
         </div>

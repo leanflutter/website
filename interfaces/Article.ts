@@ -3,6 +3,7 @@ export type Article = {
   slug?: string;
   title?: string;
   content?: string;
+  date?: string;
   mdxContent?: any;
   headings?: any[];
 };

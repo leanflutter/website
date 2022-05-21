@@ -1,10 +1,9 @@
-import React from "react";
-import Head from "next/head";
-import { useTranslation } from "next-i18next";
 import { AppShell } from "@mantine/core";
-
 import { Footer } from "./Footer";
+import Head from "next/head";
 import { Header } from "./Header";
+import React from "react";
+import { useTranslation } from "next-i18next";
 
 interface LayoutProps {
   title?: string;
@@ -44,12 +43,12 @@ export function Layout({ title, description, children }: LayoutProps) {
                     },
                   ],
                 },
+                { link: "/blog", label: t("nav-item-blog"), links: [] },
                 {
                   link: "/sponsor",
                   label: t("nav-item-sponsor"),
                   links: [],
                 },
-                // { link: "/blog", label: t("nav-item-blog"), links: [] },
               ]}
             />
           }
