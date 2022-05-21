@@ -2,7 +2,7 @@
 title: Making the app single-instanced
 date: 2022-05-21 15:30
 tags:
-- Windows
+- windows
 ---
 
 Single-instanced apps only allow one instance of the app running at a time. Flutter Windows apps are multi-instanced by default. If a first instance exists when trying to start a new instance, end the new instance and activate the first instance.
