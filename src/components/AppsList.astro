@@ -1,0 +1,40 @@
+---
+// import fetch from 'node-fetch';
+
+type App = {
+  slug: string;
+  name: string;
+  description?: string;
+  website?: string;
+  repository?: string;
+  icon?: string;
+  platforms?: string[];
+};
+
+const getApps = async (): Promise<App[]> => {
+  const response = await fetch(
+    "https://raw.githubusercontent.com/leanflutter/flutter_apps/main/index.json"
+  );
+  return (await response.json()) as App[];
+};
+
+const apps = await getApps();
+---
+
+<div>
+  {
+    apps.map(async (app) => (
+      <div class="flex flex-row">
+        <div class="inline-flex w-20 h-20">
+          <img class="block w-20 h-20 bg-gray-50 rounded-2xl" src={app.icon} />
+        </div>
+        <div class="flex-1 ml-4 !mt-0">
+          <a href={app.website ?? app.repository}>
+            <div class="font-semibold">{app.name}</div>
+          </a>
+          <Fragment set:html={app.description} />
+        </div>
+      </div>
+    ))
+  }
+</div>

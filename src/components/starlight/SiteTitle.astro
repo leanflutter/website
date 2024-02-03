@@ -3,6 +3,7 @@ import type { Props } from "@astrojs/starlight/props";
 import AstrolightSiteTitle from "@astrojs/starlight/components/SiteTitle.astro";
 
 const items = [
+  { name: "Apps", href: "/apps" },
   { name: "Packages", href: "/our-packages" },
   { name: "Tips", href: "/tips-and-tricks" },
   { name: "Sponsor", href: "/sponsor" },
@@ -62,13 +63,12 @@ function pathsMatch(pathA: string, pathB: string): boolean {
     color: var(--sl-color-text-accent);
   }
 
-	@media (min-width: 50rem) {
-		.nav {
-			display: flex;
-		}
-		.separator {
-			display: block;
-		}
-	}
-}
+  @media (min-width: 50rem) {
+    .nav {
+      display: flex;
+    }
+    .separator {
+      display: block;
+    }
+  }
 </style>
