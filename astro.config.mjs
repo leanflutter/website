@@ -1,6 +1,9 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import tailwind from "@astrojs/tailwind";
+import partytown from "@astrojs/partytown";
+
+const googleAnalyticsId = "G-10PX6JWP7L";
 
 // https://astro.build/config
 export default defineConfig({
@@ -45,10 +48,38 @@ export default defineConfig({
         SiteTitle: "./src/components/starlight/SiteTitle.astro",
       },
       customCss: ["./src/tailwind.css"],
+      head: [
+        {
+          tag: "script",
+          attrs: {
+            type: "text/partytown",
+            src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`,
+            async: true,
+          },
+        },
+        {
+          tag: "script",
+          attrs: {
+            type: "text/partytown",
+          },
+          content: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${googleAnalyticsId}');
+            `,
+        },
+      ],
     }),
     tailwind({
       // Disable the default base styles:
       applyBaseStyles: false,
+    }),
+    partytown({
+      // Adds dataLayer.push as a forwarding-event.
+      config: {
+        forward: ["dataLayer.push"],
+      },
     }),
   ],
 });
