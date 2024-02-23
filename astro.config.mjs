@@ -69,6 +69,14 @@ export default defineConfig({
               gtag('config', '${googleAnalyticsId}');
             `,
         },
+        {
+          tag: "script",
+          attrs: {
+            src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6049036475236211`,
+            async: true,
+            crossorigin: "anonymous",
+          },
+        },
       ],
     }),
     tailwind({
